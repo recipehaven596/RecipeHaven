@@ -83,5 +83,14 @@ const recipes = [
         time: "35 min",
         difficulty: "Easy",
         url: "Creamy_Pumpkin_Soup.html"
+    },
+    {
+        title: "Garlic Herb Roasted Pumpkin",
+        category: "SIDE DISH",
+        description: "Tender roasted pumpkin seasoned with garlic, rosemary, thyme, olive oil, and paprika, with golden caramelized edges and fresh herbs.",
+        image: "images/garlic-herb-roasted-pumpkin.png",
+        time: "40 min",
+        difficulty: "Easy",
+        url: "Garlic_Herb_Roasted_Pumpkin.html"
     }
 ];
