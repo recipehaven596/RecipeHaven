@@ -2,15 +2,7 @@ const recipes = [
 
 
 
-    {
-        title: "Berry Breakfast Bowl",
-        category: "BREAKFAST",
-        description: "A fresh and colorful breakfast bowl made with berries and creamy yogurt.",
-        time: "10 min",
-        difficulty: "Easy",
-        image: "https://images.unsplash.com/photo-1490474418585-ba9bad8fd0ea?auto=format&fit=crop&w=900&q=85",
-        url: "berry-breakfast-bowl.html"
-    },
+
 
 
     {
@@ -47,6 +39,8 @@ const recipes = [
         image: "images/Pumpkin_Pancakes.png",
         url: "Pumpkin_Pancakes.html"
     },
+
+
 ];
 
 
