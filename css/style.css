@@ -1980,3 +1980,29 @@ a {
     }
 
 }
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}
+.logo-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-text > div {
+    font-size: 35px;
+    line-height: 1;
+}
+
+.logo-text small {
+    margin-top: 8px;
+    font-size: 9px;
+    letter-spacing: 3px;
+}
