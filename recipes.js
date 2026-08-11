@@ -74,6 +74,14 @@ const recipes = [
         difficulty: "Easy",
         image: "https://images.unsplash.com/photo-1532550907401-a500c9a57435?auto=format&fit=crop&w=900&q=85",
         url: "lemon-herb-chicken.html"
+    },
+    {
+        title: "Creamy Pumpkin Soup",
+        category: "DINNER",
+        description: "A warm and comforting creamy pumpkin soup made with pumpkin, garlic, vegetable broth, and coconut milk or cream.",
+        image: "images/creamy pumpkin soup.png",
+        time: "35 min",
+        difficulty: "Easy",
+        url: "Creamy_Pumpkin_Soup.html"
     }
-
 ];
