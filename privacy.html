@@ -14,10 +14,30 @@
 
     <meta
             name="description"
-            content="Privacy Policy for Recipe Haven."
+            content="Read the Privacy Policy for Recipe Haven and learn how we handle information, cookies, advertising, and third-party services."
     >
 
-    <link rel="stylesheet" href="css/style.css">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+            href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+            rel="stylesheet"
+    >
+
+    <!-- Favicon -->
+    <link
+            rel="icon"
+            type="image/png"
+            href="images/logo.png"
+    >
+
+    <!-- Main CSS -->
+    <link
+            rel="stylesheet"
+            href="css/style.css"
+    >
 
 </head>
 
@@ -25,17 +45,30 @@
 <body>
 
 
+<!-- ================= HEADER ================= -->
+
 <header class="site-header">
 
     <div class="container header-inner">
 
         <a href="index.html" class="logo">
 
-            Recipe <span>Haven</span>
+            <img
+                    src="images/logo.png"
+                    alt="Recipe Haven Logo"
+            >
 
-            <small>
-                WHERE GOOD FOOD FEELS LIKE HOME
-            </small>
+            <div class="logo-text">
+
+                <div>
+                    Recipe <span>Haven</span>
+                </div>
+
+                <small>
+                    WHERE GOOD FOOD FEELS LIKE HOME
+                </small>
+
+            </div>
 
         </a>
 
@@ -50,6 +83,18 @@
                 Recipes
             </a>
 
+            <a href="index.html#breakfast">
+                Breakfast
+            </a>
+
+            <a href="index.html#dinner">
+                Dinner
+            </a>
+
+            <a href="index.html#desserts">
+                Desserts
+            </a>
+
             <a href="about.html">
                 About
             </a>
@@ -57,23 +102,77 @@
             <a href="contact.html">
                 Contact
             </a>
+            <a href="privacy.html">Privacy Policy</a>
 
         </nav>
 
+
+        <button
+                class="mobile-menu-button"
+                id="mobileMenuButton"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+        >
+            ☰
+        </button>
+
     </div>
+
+
+    <!-- Mobile Navigation -->
+
+    <nav
+            class="mobile-nav"
+            id="mobileNav"
+    >
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="index.html#recipes">
+            Recipes
+        </a>
+
+        <a href="index.html#breakfast">
+            Breakfast
+        </a>
+
+        <a href="index.html#dinner">
+            Dinner
+        </a>
+
+        <a href="index.html#desserts">
+            Desserts
+        </a>
+
+        <a href="about.html">
+            About
+        </a>
+
+        <a href="contact.html">
+            Contact
+        </a>
+
+    </nav>
 
 </header>
 
 
+<!-- ================= MAIN ================= -->
+
 <main>
+
+
+    <!-- HERO -->
 
     <section class="page-hero">
 
         <div class="container">
 
-        <span class="section-label">
-            INFORMATION
-        </span>
+            <span class="section-label">
+                INFORMATION
+            </span>
 
             <h1>
                 Privacy Policy
@@ -88,84 +187,278 @@
     </section>
 
 
-    <section class="section">
+    <!-- PRIVACY CONTENT -->
 
-        <div class="container content-page">
+    <section class="section privacy-section">
 
-            <p>
-                This Privacy Policy explains how Recipe Haven may
-                collect and use information when visitors use this
-                website.
-            </p>
+        <div class="container">
+
+            <div class="content-page privacy-content">
 
 
-            <h2>
-                Information We Collect
-            </h2>
+                <div class="privacy-intro">
 
-            <p>
-                We may collect information that you voluntarily provide,
-                such as your name and email address when you contact us
-                or subscribe to updates.
-            </p>
+                    <span class="section-label">
+                        YOUR PRIVACY
+                    </span>
 
+                    <h2>
+                        Welcome to Recipe Haven
+                    </h2>
 
-            <h2>
-                Cookies
-            </h2>
+                    <p>
+                        We respect your privacy and want you to feel
+                        comfortable while exploring our recipes and
+                        enjoying our website.
+                    </p>
 
-            <p>
-                Recipe Haven may use cookies and similar technologies
-                to improve the website experience and understand how
-                visitors use the site.
-            </p>
+                    <p class="privacy-updated">
+                        <strong>Last updated:</strong> August 2026
+                    </p>
 
-
-            <h2>
-                Advertising
-            </h2>
-
-            <p>
-                This website may display advertisements from third-party
-                advertising services. These services may use cookies or
-                similar technologies in accordance with their own
-                policies.
-            </p>
+                </div>
 
 
-            <h2>
-                Third-Party Services
-            </h2>
+                <!-- INFORMATION WE COLLECT -->
 
-            <p>
-                Some website features may rely on third-party services.
-                Their privacy practices are governed by their respective
-                policies.
-            </p>
+                <section class="privacy-block">
 
+                    <h2>
+                        01. Information We Collect
+                    </h2>
 
-            <h2>
-                Contact
-            </h2>
+                    <p>
+                        We may collect information that you voluntarily
+                        provide when using Recipe Haven, such as your
+                        name and email address when you contact us or
+                        subscribe to updates.
+                    </p>
 
-            <p>
-                If you have questions about this Privacy Policy,
-                please contact us through our contact page.
-            </p>
+                </section>
 
 
-            <p>
-                Last updated: August 2026
-            </p>
+                <!-- COOKIES -->
+
+                <section class="privacy-block">
+
+                    <h2>
+                        02. Cookies
+                    </h2>
+
+                    <p>
+                        Recipe Haven may use cookies and similar
+                        technologies to improve your experience and
+                        understand how visitors use the website.
+                    </p>
+
+                    <p>
+                        Cookies may help us understand which pages are
+                        useful to visitors and how the website can be
+                        improved.
+                    </p>
+
+                </section>
+
+
+                <!-- ADVERTISING -->
+
+                <section class="privacy-block">
+
+                    <h2>
+                        03. Advertising
+                    </h2>
+
+                    <p>
+                        This website may display advertisements from
+                        third-party advertising services.
+                    </p>
+
+                    <p>
+                        These services may use cookies or similar
+                        technologies in accordance with their own
+                        privacy policies.
+                    </p>
+
+                </section>
+
+
+                <!-- THIRD PARTY -->
+
+                <section class="privacy-block">
+
+                    <h2>
+                        04. Third-Party Services
+                    </h2>
+
+                    <p>
+                        Some features of Recipe Haven may rely on
+                        third-party services. These services may collect
+                        or process information according to their own
+                        privacy policies.
+                    </p>
+
+                    <p>
+                        We recommend reviewing the privacy policies of
+                        third-party services when using features that
+                        depend on them.
+                    </p>
+
+                </section>
+
+
+                <!-- INFORMATION SECURITY -->
+
+                <section class="privacy-block">
+
+                    <h2>
+                        05. Your Information
+                    </h2>
+
+                    <p>
+                        We aim to handle voluntarily provided information
+                        responsibly and only use it for the purposes
+                        described on this website or communicated to you.
+                    </p>
+
+                </section>
+
+
+                <!-- CONTACT -->
+
+                <section class="privacy-block privacy-contact">
+
+                    <h2>
+                        06. Questions About Privacy?
+                    </h2>
+
+                    <p>
+                        If you have any questions about this Privacy
+                        Policy or how Recipe Haven handles information,
+                        we'd be happy to hear from you.
+                    </p>
+
+                    <a
+                            href="contact.html"
+                            class="primary-button"
+                    >
+                        Contact Us →
+                    </a>
+
+                </section>
+
+
+                <!-- NOTE -->
+
+                <div class="privacy-note">
+
+                    <strong>
+                        A little note
+                    </strong>
+
+                    <p>
+                        This Privacy Policy is provided to explain the
+                        general privacy practices of Recipe Haven.
+                    </p>
+
+                </div>
+
+
+            </div>
 
         </div>
 
     </section>
 
+
 </main>
 
 
+<!-- ================= FOOTER ================= -->
+
 <footer class="footer">
+
+    <div class="container footer-grid">
+
+
+        <div>
+
+            <div class="footer-logo">
+                Recipe Haven
+            </div>
+
+            <p>
+                Simple recipes, beautiful moments,
+                and food that feels like home.
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h4>
+                Explore
+            </h4>
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="index.html#recipes">
+                Recipes
+            </a>
+
+            <a href="index.html#dinner">
+                Dinner
+            </a>
+
+        </div>
+
+
+        <div>
+
+            <h4>
+                Categories
+            </h4>
+
+            <a href="index.html#breakfast">
+                Breakfast
+            </a>
+
+            <a href="index.html#dinner">
+                Dinner
+            </a>
+
+            <a href="index.html#desserts">
+                Desserts
+            </a>
+
+        </div>
+
+
+        <div>
+
+            <h4>
+                Information
+            </h4>
+
+            <a href="about.html">
+                About
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+            <a href="privacy.html">
+                Privacy Policy
+            </a>
+
+        </div>
+
+
+    </div>
+
 
     <div class="container copyright">
 
@@ -174,6 +467,52 @@
     </div>
 
 </footer>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+    const menuButton =
+        document.getElementById("mobileMenuButton");
+
+    const mobileNav =
+        document.getElementById("mobileNav");
+
+
+    menuButton.addEventListener("click", function () {
+
+        mobileNav.classList.toggle("active");
+
+        const isOpen =
+            mobileNav.classList.contains("active");
+
+        menuButton.setAttribute(
+            "aria-expanded",
+            isOpen
+        );
+
+    });
+
+
+    document
+        .querySelectorAll(".mobile-nav a")
+        .forEach(function(link) {
+
+            link.addEventListener("click", function() {
+
+                mobileNav.classList.remove("active");
+
+                menuButton.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+            });
+
+        });
+
+</script>
 
 
 </body>

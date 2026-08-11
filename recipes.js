@@ -79,7 +79,7 @@ const recipes = [
         title: "Creamy Pumpkin Soup",
         category: "DINNER",
         description: "A warm and comforting creamy pumpkin soup made with pumpkin, garlic, vegetable broth, and coconut milk or cream.",
-        image: "images/creamy pumpkin soup.png",
+        image: "images/creamy-pumpkin-soup.png",
         time: "35 min",
         difficulty: "Easy",
         url: "Creamy_Pumpkin_Soup.html"

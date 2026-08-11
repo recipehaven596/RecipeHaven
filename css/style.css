@@ -2751,3 +2751,194 @@ a {
         grid-template-columns: 1fr;
     }
 }
+/* ================= STICKY RECIPE CARD ================= */
+
+.sticky-recipe-card {
+    position: sticky;
+    top: 25px;
+
+    background: var(--white);
+
+    border: 1px solid var(--border);
+    border-radius: 16px;
+
+    overflow: hidden;
+
+    margin-bottom: 25px;
+
+    box-shadow:
+            0 10px 30px rgba(30, 35, 28, .08);
+}
+
+.sticky-recipe-card img {
+    width: 100%;
+    height: 170px;
+
+    object-fit: cover;
+}
+
+.sticky-recipe-info {
+    padding: 18px;
+}
+
+.sticky-recipe-info > span {
+    display: block;
+
+    color: var(--orange);
+
+    font-size: 9px;
+    letter-spacing: 1.8px;
+
+    font-weight: 700;
+
+    margin-bottom: 7px;
+}
+
+.sticky-recipe-info h3 {
+    font-family: "Playfair Display", serif;
+
+    font-size: 22px;
+    line-height: 1.15;
+
+    margin: 0 0 10px;
+
+    color: var(--green-dark);
+}
+
+.sticky-meta {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    color: var(--muted);
+
+    font-size: 11px;
+}
+.recipe-sidebar {
+    position: relative;
+    align-self: start;
+}
+/* =========================================
+   PRIVACY POLICY
+========================================= */
+
+.privacy-section {
+    padding-top: 70px;
+    padding-bottom: 90px;
+}
+
+.privacy-content {
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.privacy-intro {
+    background: #f8f5ef;
+    border-radius: 20px;
+    padding: 45px 50px;
+    margin-bottom: 55px;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.privacy-intro h2 {
+    margin-top: 12px;
+    margin-bottom: 18px;
+}
+
+.privacy-intro p {
+    max-width: 700px;
+}
+
+.privacy-updated {
+    margin-top: 25px;
+    font-size: 14px;
+    opacity: 0.75;
+}
+
+
+.privacy-block {
+    padding: 0 0 38px;
+    margin-bottom: 38px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.privacy-block h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 30px;
+    margin-bottom: 16px;
+}
+
+.privacy-block p {
+    line-height: 1.85;
+    margin-bottom: 12px;
+    color: #555;
+}
+
+
+.privacy-contact {
+    border-bottom: none;
+    padding-bottom: 15px;
+}
+
+.privacy-contact .primary-button {
+    display: inline-flex;
+    margin-top: 12px;
+}
+
+
+.privacy-note {
+    margin-top: 35px;
+    padding: 25px 30px;
+    background: #fff8ed;
+    border-left: 4px solid #c98b45;
+    border-radius: 0 12px 12px 0;
+}
+
+.privacy-note strong {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.privacy-note p {
+    margin: 0;
+    line-height: 1.7;
+    color: #666;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+    .privacy-section {
+        padding-top: 45px;
+        padding-bottom: 60px;
+    }
+
+    .privacy-intro {
+        padding: 30px 25px;
+        border-radius: 16px;
+        margin-bottom: 40px;
+    }
+
+    .privacy-block {
+        padding-bottom: 30px;
+        margin-bottom: 30px;
+    }
+
+    .privacy-block h2 {
+        font-size: 24px;
+    }
+
+    .privacy-block p {
+        font-size: 15px;
+        line-height: 1.75;
+    }
+
+    .privacy-note {
+        padding: 20px;
+    }
+
+}

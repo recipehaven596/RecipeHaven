@@ -2,22 +2,542 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
 
-    <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1.0"
-    >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Contact Recipe Haven</title>
+    <title>Contact | Recipe Haven</title>
 
     <meta
             name="description"
-            content="Contact Recipe Haven."
+            content="Get in touch with Recipe Haven. Send us your questions, suggestions, feedback, or collaboration ideas."
     >
 
-    <link rel="stylesheet" href="css/style.css">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+            href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+            rel="stylesheet"
+    >
+
+    <!-- Favicon -->
+    <link
+            rel="icon"
+            type="image/png"
+            href="images/logo.png"
+    >
+
+    <!-- Main CSS -->
+    <link
+            rel="stylesheet"
+            href="css/style.css"
+    >
+
+    <style>
+
+        /* =========================================
+           CONTACT PAGE
+        ========================================= */
+
+        .contact-hero {
+            padding: 75px 0 70px;
+            background:
+                    linear-gradient(
+                            135deg,
+                            #eee9dd 0%,
+                            #fbf8f1 55%,
+                            #f5eee5 100%
+                    );
+            border-bottom: 1px solid var(--border);
+        }
+
+        .contact-hero-content {
+            max-width: 760px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .contact-hero h1 {
+            font-family: "Playfair Display", serif;
+            font-size: clamp(46px, 7vw, 72px);
+            line-height: 1;
+            color: var(--green-dark);
+            margin: 14px 0 22px;
+        }
+
+        .contact-hero h1 span {
+            color: var(--orange);
+        }
+
+        .contact-hero p {
+            max-width: 620px;
+            margin: auto;
+            color: var(--muted);
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+
+        /* =========================================
+           CONTACT SECTION
+        ========================================= */
+
+        .contact-section {
+            padding: 75px 0;
+        }
+
+        .contact-layout {
+            display: grid;
+            grid-template-columns: 0.85fr 1.15fr;
+            gap: 55px;
+            align-items: start;
+        }
+
+
+        /* =========================================
+           LEFT SIDE
+        ========================================= */
+
+        .contact-info {
+            padding-top: 12px;
+        }
+
+        .contact-info h2 {
+            font-family: "Playfair Display", serif;
+            font-size: 42px;
+            line-height: 1.1;
+            margin: 8px 0 18px;
+            color: var(--green-dark);
+        }
+
+        .contact-intro {
+            color: var(--muted);
+            font-size: 15px;
+            line-height: 1.8;
+            max-width: 500px;
+            margin-bottom: 30px;
+        }
+
+
+        /* CONTACT CARDS */
+
+        .contact-card {
+            display: flex;
+            align-items: flex-start;
+            gap: 17px;
+
+            padding: 20px 0;
+
+            border-top: 1px solid var(--border);
+        }
+
+        .contact-card:last-of-type {
+            border-bottom: 1px solid var(--border);
+        }
+
+        .contact-icon {
+            flex-shrink: 0;
+
+            width: 48px;
+            height: 48px;
+
+            display: grid;
+            place-items: center;
+
+            border-radius: 50%;
+
+            background: #eee9dd;
+            color: var(--green-dark);
+
+            font-size: 19px;
+        }
+
+        .contact-card span {
+            display: block;
+
+            color: var(--orange);
+
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: 2px;
+
+            margin-bottom: 5px;
+        }
+
+        .contact-card strong {
+            display: block;
+
+            color: var(--green-dark);
+
+            font-family: "Playfair Display", serif;
+            font-size: 20px;
+            line-height: 1.2;
+        }
+
+        .contact-card p {
+            color: var(--muted);
+            font-size: 12px;
+            line-height: 1.6;
+            margin: 6px 0 0;
+        }
+
+
+        /* NOTE */
+
+        .contact-note {
+            margin-top: 28px;
+
+            padding: 20px 22px;
+
+            background: #eee9dd;
+
+            border-left: 4px solid var(--orange);
+        }
+
+        .contact-note strong {
+            display: block;
+
+            color: var(--green-dark);
+
+            font-family: "Playfair Display", serif;
+            font-size: 18px;
+
+            margin-bottom: 5px;
+        }
+
+        .contact-note p {
+            color: var(--muted);
+            font-size: 13px;
+            line-height: 1.7;
+
+            margin: 0;
+        }
+
+
+        /* =========================================
+           FORM CARD
+        ========================================= */
+
+        .contact-form-wrapper {
+            background: var(--white);
+
+            border: 1px solid var(--border);
+            border-radius: 16px;
+
+            padding: 38px;
+
+            box-shadow:
+                    0 15px 40px rgba(30, 35, 28, .06);
+        }
+
+        .form-header {
+            margin-bottom: 28px;
+        }
+
+        .form-header h2 {
+            font-family: "Playfair Display", serif;
+
+            color: var(--green-dark);
+
+            font-size: 34px;
+            line-height: 1.1;
+
+            margin: 7px 0 10px;
+        }
+
+        .form-header p {
+            color: var(--muted);
+            font-size: 13px;
+            line-height: 1.7;
+
+            margin: 0;
+        }
+
+
+        /* FORM */
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+        }
+
+        .form-group label {
+            color: var(--green-dark);
+
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: .5px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+
+            box-sizing: border-box;
+
+            border: 1px solid var(--border);
+            border-radius: 8px;
+
+            background: #fbf9f4;
+
+            color: var(--text);
+
+            font-family: "DM Sans", sans-serif;
+            font-size: 14px;
+
+            outline: none;
+
+            transition:
+                    border-color .2s,
+                    box-shadow .2s,
+                    background .2s;
+        }
+
+        .form-group input,
+        .form-group select {
+            height: 48px;
+            padding: 0 14px;
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            padding: 14px;
+            resize: vertical;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: #aaa99f;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--green);
+
+            background: white;
+
+            box-shadow:
+                    0 0 0 3px rgba(102, 118, 93, .10);
+        }
+
+
+        /* SUBMIT */
+
+        .contact-submit {
+            min-height: 50px;
+
+            border: 0;
+            border-radius: 7px;
+
+            background: var(--green);
+
+            color: white;
+
+            padding: 0 22px;
+
+            font-family: "DM Sans", sans-serif;
+            font-size: 13px;
+            font-weight: 700;
+
+            cursor: pointer;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+
+            transition:
+                    background .2s,
+                    transform .2s;
+        }
+
+        .contact-submit:hover {
+            background: var(--green-dark);
+            transform: translateY(-2px);
+        }
+
+        .contact-submit span {
+            font-size: 18px;
+        }
+
+        .form-small-text {
+            color: #99998f;
+
+            font-size: 10px;
+            line-height: 1.5;
+
+            text-align: center;
+
+            margin: -3px 0 0;
+        }
+
+
+        /* =========================================
+           CTA
+        ========================================= */
+
+        .contact-cta {
+            padding: 0 0 75px;
+        }
+
+        .contact-cta-inner {
+            background: var(--green-dark);
+
+            border-radius: 16px;
+
+            padding: 35px 42px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 25px;
+        }
+
+        .contact-cta h2 {
+            color: white;
+
+            font-family: "Playfair Display", serif;
+
+            font-size: 31px;
+            line-height: 1.1;
+
+            margin: 6px 0 0;
+        }
+
+        .contact-cta .section-label {
+            color: #e9b9a4;
+        }
+
+        .contact-cta .primary-button {
+            white-space: nowrap;
+        }
+
+
+        /* =========================================
+           ACTIVE NAV
+        ========================================= */
+
+        .desktop-nav a.active {
+            color: var(--orange);
+        }
+
+
+        /* =========================================
+           MOBILE
+        ========================================= */
+
+        @media (max-width: 900px) {
+
+            .contact-layout {
+                grid-template-columns: 1fr;
+                gap: 45px;
+            }
+
+            .contact-info {
+                max-width: 700px;
+            }
+
+            .contact-form-wrapper {
+                max-width: 100%;
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            .contact-hero {
+                padding: 55px 0 50px;
+            }
+
+            .contact-hero h1 {
+                font-size: 44px;
+            }
+
+            .contact-hero p {
+                font-size: 14px;
+            }
+
+            .contact-section {
+                padding: 50px 0;
+            }
+
+            .contact-info h2 {
+                font-size: 34px;
+            }
+
+            .contact-form-wrapper {
+                padding: 25px 20px;
+                border-radius: 13px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 18px;
+            }
+
+            .form-header h2 {
+                font-size: 29px;
+            }
+
+            .contact-cta {
+                padding-bottom: 50px;
+            }
+
+            .contact-cta-inner {
+                flex-direction: column;
+                align-items: flex-start;
+
+                padding: 30px 25px;
+            }
+
+            .contact-cta h2 {
+                font-size: 28px;
+            }
+
+            .contact-cta .primary-button {
+                width: 100%;
+                text-align: center;
+            }
+
+        }
+
+
+        @media (max-width: 380px) {
+
+            .contact-hero h1 {
+                font-size: 38px;
+            }
+
+            .contact-form-wrapper {
+                padding: 22px 17px;
+            }
+
+            .contact-card strong {
+                font-size: 18px;
+            }
+
+        }
+
+    </style>
 
 </head>
 
@@ -25,19 +545,34 @@
 <body>
 
 
+<!-- ================= HEADER ================= -->
+
 <header class="site-header">
 
     <div class="container header-inner">
 
         <a href="index.html" class="logo">
 
-            Recipe <span>Haven</span>
+            <img
+                    src="images/logo.png"
+                    alt="Recipe Haven Logo"
+            >
 
-            <small>
-                WHERE GOOD FOOD FEELS LIKE HOME
-            </small>
+            <div class="logo-text">
+
+                <div>
+                    Recipe <span>Haven</span>
+                </div>
+
+                <small>
+                    WHERE GOOD FOOD FEELS LIKE HOME
+                </small>
+
+            </div>
 
         </a>
+
+
 
 
         <nav class="desktop-nav">
@@ -50,6 +585,464 @@
                 Recipes
             </a>
 
+            <a href="index.html#breakfast">
+                Breakfast
+            </a>
+
+            <a href="index.html#dinner">
+                Dinner
+            </a>
+
+            <a href="index.html#desserts">
+                Desserts
+            </a>
+
+            <a href="about.html">
+                About
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+            <a href="privacy.html">Privacy Policy</a>
+
+        </nav>
+
+
+        <button
+                class="mobile-menu-button"
+                id="mobileMenuButton"
+                aria-label="Open menu"
+                aria-expanded="false"
+        >
+            ☰
+        </button>
+
+    </div>
+
+
+    <!-- MOBILE NAV -->
+
+    <nav
+            class="mobile-nav"
+            id="mobileNav"
+    >
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="index.html#recipes">
+            Recipes
+        </a>
+
+        <a href="index.html#breakfast">
+            Breakfast
+        </a>
+
+        <a href="index.html#dinner">
+            Dinner
+        </a>
+
+        <a href="index.html#desserts">
+            Desserts
+        </a>
+
+        <a href="about.html">
+            About
+        </a>
+
+        <a href="contact.html">
+            Contact
+        </a>
+        <a href="privacy.html">Privacy Policy</a>
+
+    </nav>
+
+</header>
+
+
+<!-- ================= MAIN ================= -->
+
+<main>
+
+
+    <!-- HERO -->
+
+    <section class="contact-hero">
+
+        <div class="container">
+
+            <div class="contact-hero-content">
+
+                <span class="section-label">
+                    GET IN TOUCH
+                </span>
+
+                <h1>
+                    We'd Love to
+                    <span>Hear From You.</span>
+                </h1>
+
+                <p>
+                    Have a question about a recipe, a suggestion for
+                    the website, or simply want to say hello?
+                    Send us a message.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT CONTENT -->
+
+    <section class="section contact-section">
+
+        <div class="container contact-layout">
+
+
+            <!-- LEFT SIDE -->
+
+            <div class="contact-info">
+
+                <span class="section-label">
+                    CONTACT US
+                </span>
+
+                <h2>
+                    Let's Talk Food
+                </h2>
+
+                <p class="contact-intro">
+                    Recipe Haven is all about simple recipes,
+                    beautiful moments, and food that feels like home.
+                    We're always happy to hear from our readers.
+                </p>
+
+
+                <!-- EMAIL -->
+
+                <div class="contact-card">
+
+                    <div class="contact-icon">
+                        ✉
+                    </div>
+
+                    <div>
+
+                        <span>
+                            EMAIL
+                        </span>
+
+                        <strong>
+                            hello@recipehaven.com
+                        </strong>
+
+                        <p>
+                            For general questions and feedback.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- COLLABORATION -->
+
+                <div class="contact-card">
+
+                    <div class="contact-icon">
+                        ✦
+                    </div>
+
+                    <div>
+
+                        <span>
+                            COLLABORATIONS
+                        </span>
+
+                        <strong>
+                            Let's create together
+                        </strong>
+
+                        <p>
+                            Interested in working with Recipe Haven?
+                            We'd love to hear your idea.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- RESPONSE NOTE -->
+
+                <div class="contact-note">
+
+                    <strong>
+                        A little note
+                    </strong>
+
+                    <p>
+                        We read every message we receive and do our
+                        best to reply as soon as possible.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- RIGHT SIDE -->
+
+            <div class="contact-form-wrapper">
+
+                <div class="form-header">
+
+                    <span class="section-label">
+                        SEND A MESSAGE
+                    </span>
+
+                    <h2>
+                        Tell Us What's On Your Mind
+                    </h2>
+
+                    <p>
+                        Fill out the form below and we'll get back
+                        to you soon.
+                    </p>
+
+                </div>
+
+
+                <form
+                        class="contact-form"
+                        id="contactForm"
+                >
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+
+                            <label for="name">
+                                Your Name
+                            </label>
+
+                            <input
+                                    id="name"
+                                    name="name"
+                                    type="text"
+                                    placeholder="Your name"
+                                    required
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="email">
+                                Email Address
+                            </label>
+
+                            <input
+                                    id="email"
+                                    name="email"
+                                    type="email"
+                                    placeholder="you@example.com"
+                                    required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="subject">
+                            Subject
+                        </label>
+
+                        <select
+                                id="subject"
+                                name="subject"
+                                required
+                        >
+
+                            <option value="" disabled selected>
+                                Choose a topic
+                            </option>
+
+                            <option value="recipe">
+                                Recipe Question
+                            </option>
+
+                            <option value="feedback">
+                                Website Feedback
+                            </option>
+
+                            <option value="collaboration">
+                                Collaboration
+                            </option>
+
+                            <option value="other">
+                                Something Else
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="message">
+                            Your Message
+                        </label>
+
+                        <textarea
+                                id="message"
+                                name="message"
+                                rows="7"
+                                placeholder="Write your message here..."
+                                required
+                        ></textarea>
+
+                    </div>
+
+
+                    <button
+                            type="submit"
+                            class="contact-submit"
+                    >
+                        Send Message
+                        <span>→</span>
+                    </button>
+
+
+                    <p class="form-small-text">
+                        By sending this message, you agree to
+                        contact us regarding your inquiry.
+                    </p>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CTA -->
+
+    <section class="contact-cta">
+
+        <div class="container">
+
+            <div class="contact-cta-inner">
+
+                <div>
+
+                    <span class="section-label">
+                        KEEP COOKING
+                    </span>
+
+                    <h2>
+                        Looking for your next recipe?
+                    </h2>
+
+                </div>
+
+                <a
+                        href="index.html#recipes"
+                        class="primary-button"
+                >
+                    Explore Recipes →
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer">
+
+    <div class="container footer-grid">
+
+        <div>
+
+            <div class="footer-logo">
+                Recipe Haven
+            </div>
+
+            <p>
+                Simple recipes, beautiful moments,
+                and food that feels like home.
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h4>
+                Explore
+            </h4>
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="index.html#recipes">
+                Recipes
+            </a>
+
+            <a href="index.html#dinner">
+                Dinner
+            </a>
+
+        </div>
+
+
+        <div>
+
+            <h4>
+                Categories
+            </h4>
+
+            <a href="index.html#breakfast">
+                Breakfast
+            </a>
+
+            <a href="index.html#dinner">
+                Dinner
+            </a>
+
+            <a href="index.html#desserts">
+                Desserts
+            </a>
+
+        </div>
+
+
+        <div>
+
+            <h4>
+                Information
+            </h4>
+
             <a href="about.html">
                 About
             </a>
@@ -58,117 +1051,14 @@
                 Contact
             </a>
 
-        </nav>
+            <a href="#">
+                Privacy Policy
+            </a>
+
+        </div>
 
     </div>
 
-</header>
-
-
-<main>
-
-    <section class="page-hero">
-
-        <div class="container">
-
-        <span class="section-label">
-            GET IN TOUCH
-        </span>
-
-            <h1>
-                Contact Recipe Haven
-            </h1>
-
-            <p>
-                Have a question, suggestion, or just want to say hello?
-                We'd love to hear from you.
-            </p>
-
-        </div>
-
-    </section>
-
-
-    <section class="section">
-
-        <div class="container contact-layout">
-
-
-            <div class="content-page">
-
-                <h2>
-                    We'd Love to Hear From You
-                </h2>
-
-                <p>
-                    For questions about recipes, website feedback,
-                    collaborations, or general inquiries, please use
-                    the contact form.
-                </p>
-
-                <p>
-                    Email:
-                    <strong>
-                        hello@recipehaven.com
-                    </strong>
-                </p>
-
-            </div>
-
-
-            <form
-                    class="contact-form"
-                    onsubmit="event.preventDefault(); alert('Thank you! Your message has been received.');"
-            >
-
-                <label>
-                    Your Name
-                </label>
-
-                <input
-                        type="text"
-                        placeholder="Your name"
-                        required
-                >
-
-
-                <label>
-                    Email Address
-                </label>
-
-                <input
-                        type="email"
-                        placeholder="you@example.com"
-                        required
-                >
-
-
-                <label>
-                    Message
-                </label>
-
-                <textarea
-                        rows="7"
-                        placeholder="Write your message..."
-                        required
-                ></textarea>
-
-
-                <button type="submit">
-                    Send Message
-                </button>
-
-            </form>
-
-
-        </div>
-
-    </section>
-
-</main>
-
-
-<footer class="footer">
 
     <div class="container copyright">
 
@@ -177,6 +1067,72 @@
     </div>
 
 </footer>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+    const menuButton =
+        document.getElementById("mobileMenuButton");
+
+    const mobileNav =
+        document.getElementById("mobileNav");
+
+
+    menuButton.addEventListener("click", function () {
+
+        mobileNav.classList.toggle("active");
+
+        const isOpen =
+            mobileNav.classList.contains("active");
+
+        menuButton.setAttribute(
+            "aria-expanded",
+            isOpen
+        );
+
+    });
+
+
+    document
+        .querySelectorAll(".mobile-nav a")
+        .forEach(function(link) {
+
+            link.addEventListener("click", function() {
+
+                mobileNav.classList.remove("active");
+
+                menuButton.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+            });
+
+        });
+
+
+    const contactForm =
+        document.getElementById("contactForm");
+
+
+    contactForm.addEventListener(
+        "submit",
+        function(event) {
+
+            event.preventDefault();
+
+            alert(
+                "Thank you! Your message has been received."
+            );
+
+            contactForm.reset();
+
+        }
+    );
+
+</script>
 
 
 </body>
