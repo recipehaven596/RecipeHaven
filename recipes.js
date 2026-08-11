@@ -40,5 +40,106 @@ const recipes = [
         time: "40 min",
         difficulty: "Easy",
         url: "Garlic_Herb_Roasted_Pumpkin.html"
-    }
+    },
+    {
+        title: "Pumpkin Pancakes",
+        category: "BREAKFAST",
+        image: "images/Pumpkin_Pancakes.png",
+        url: "Pumpkin_Pancakes.html"
+    },
 ];
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function shuffleArray(array) {
+
+    const shuffled = [...array];
+
+    for (let i = shuffled.length - 1; i > 0; i--) {
+
+        const j = Math.floor(Math.random() * (i + 1));
+
+        [shuffled[i], shuffled[j]] =
+            [shuffled[j], shuffled[i]];
+    }
+
+    return shuffled;
+}
+
+
+function showRecommendedRecipes() {
+
+    const container =
+        document.getElementById("recommendedRecipes");
+
+    if (!container) return;
+
+
+    // Get current page
+    const currentPage =
+        window.location.pathname.split("/").pop();
+
+
+    // Remove current recipe
+    const availableRecipes =
+        recipes.filter(recipe =>
+            recipe.url !== currentPage
+        );
+
+
+    // Randomize recipes
+    const randomRecipes =
+        shuffleArray(availableRecipes);
+
+
+    // Show only 2
+    const selectedRecipes =
+        randomRecipes.slice(0, 2);
+
+
+    container.innerHTML =
+        selectedRecipes.map(recipe => `
+
+            <a
+                href="${recipe.url}"
+                class="sidebar-recipe"
+            >
+
+                <img
+                    src="${recipe.image}"
+                    alt="${recipe.title}"
+                >
+
+                <span>
+                    ${recipe.title}
+                </span>
+
+            </a>
+
+        `).join("");
+}
+
+
+showRecommendedRecipes();
