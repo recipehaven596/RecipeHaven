@@ -1,12 +1,5 @@
 const recipes = [
 
-
-
-
-
-
-
-
     {
         title: "Creamy Pumpkin Soup",
         category: "DINNER",
@@ -24,6 +17,12 @@ const recipes = [
         time: "40 min",
         difficulty: "Easy",
         url: "Garlic_Herb_Roasted_Pumpkin.html"
+    },
+    {
+        title: "Pumpkin Pancakes",
+        category: "BREAKFAST",
+        image: "images/Pumpkin_Pancakes.png",
+        url: "Pumpkin_Pancakes.html"
     },
 
     {
@@ -132,49 +131,52 @@ function showRecommendedRecipes() {
 
 showRecommendedRecipes();
 
-
 const dessertContainer =
     document.getElementById("dessertRecipes");
 
-const dessertRecipes = recipes.filter(
-    recipe => recipe.category.toUpperCase() === "DESSERT"
-);
+if (dessertContainer) {
 
-dessertContainer.innerHTML = dessertRecipes.map(recipe => `
+    const dessertRecipes = recipes.filter(
+        recipe => recipe.category.toUpperCase() === "DESSERT"
+    );
 
-    <article class="recipe-card">
+    dessertContainer.innerHTML = dessertRecipes.map(recipe => `
 
-        <a href="${recipe.url}">
-            <img
-                src="${recipe.image}"
-                alt="${recipe.title}"
-                loading="lazy"
-            >
-        </a>
+        <article class="recipe-card">
 
-        <div class="recipe-card-content">
+            <a href="${recipe.url}">
+                <img
+                    src="${recipe.image}"
+                    alt="${recipe.title}"
+                    loading="lazy"
+                >
+            </a>
 
-            <span class="recipe-category">
-                ${recipe.category}
-            </span>
+            <div class="recipe-card-content">
 
-            <h3>
-                <a href="${recipe.url}">
-                    ${recipe.title}
-                </a>
-            </h3>
+                <span class="recipe-category">
+                    ${recipe.category}
+                </span>
 
-            <p>
-                ${recipe.description}
-            </p>
+                <h3>
+                    <a href="${recipe.url}">
+                        ${recipe.title}
+                    </a>
+                </h3>
 
-            <div class="recipe-card-meta">
-                <span>${recipe.time}</span>
-                <span>${recipe.difficulty}</span>
+                <p>
+                    ${recipe.description}
+                </p>
+
+                <div class="recipe-card-meta">
+                    <span>${recipe.time}</span>
+                    <span>${recipe.difficulty}</span>
+                </div>
+
             </div>
 
-        </div>
+        </article>
 
-    </article>
+    `).join("");
 
-`).join("");
+}
