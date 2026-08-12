@@ -131,3 +131,50 @@ function showRecommendedRecipes() {
 
 
 showRecommendedRecipes();
+
+
+const dessertContainer =
+    document.getElementById("dessertRecipes");
+
+const dessertRecipes = recipes.filter(
+    recipe => recipe.category.toUpperCase() === "DESSERT"
+);
+
+dessertContainer.innerHTML = dessertRecipes.map(recipe => `
+
+    <article class="recipe-card">
+
+        <a href="${recipe.url}">
+            <img
+                src="${recipe.image}"
+                alt="${recipe.title}"
+                loading="lazy"
+            >
+        </a>
+
+        <div class="recipe-card-content">
+
+            <span class="recipe-category">
+                ${recipe.category}
+            </span>
+
+            <h3>
+                <a href="${recipe.url}">
+                    ${recipe.title}
+                </a>
+            </h3>
+
+            <p>
+                ${recipe.description}
+            </p>
+
+            <div class="recipe-card-meta">
+                <span>${recipe.time}</span>
+                <span>${recipe.difficulty}</span>
+            </div>
+
+        </div>
+
+    </article>
+
+`).join("");
