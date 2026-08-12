@@ -5,15 +5,7 @@ const recipes = [
 
 
 
-    {
-        title: "Chocolate Chip Cookies",
-        category: "DESSERT",
-        description: "Soft, golden cookies loaded with delicious chocolate chips.",
-        time: "25 min",
-        difficulty: "Easy",
-        image: "https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&fit=crop&w=900&q=85",
-        url: "cookies.html"
-    },
+
 
     {
         title: "Creamy Pumpkin Soup",
@@ -32,12 +24,6 @@ const recipes = [
         time: "40 min",
         difficulty: "Easy",
         url: "Garlic_Herb_Roasted_Pumpkin.html"
-    },
-    {
-        title: "Pumpkin Pancakes",
-        category: "BREAKFAST",
-        image: "images/Pumpkin_Pancakes.png",
-        url: "Pumpkin_Pancakes.html"
     },
 
     {
