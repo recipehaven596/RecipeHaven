@@ -40,7 +40,15 @@ const recipes = [
         url: "Pumpkin_Pancakes.html"
     },
 
-
+    {
+        title: "Classic Apple Crumble",
+        category: "DESSERT",
+        description: "Warm cinnamon apples topped with a golden, buttery oat crumble.",
+        image: "images/Classic_Apple_Crumble.png",
+        time: "50 min",
+        difficulty: "Easy",
+        url: "Classic_Apple_Crumble.html"
+    },
 ];
 
 
