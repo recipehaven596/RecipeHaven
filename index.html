@@ -310,13 +310,13 @@
 
 
     <!-- ================= BREAKFAST ================= -->
+    <!-- ================= BREAKFAST ================= -->
 
     <section
             class="section"
             id="breakfast">
 
         <div class="container">
-
 
             <div class="section-heading">
 
@@ -343,50 +343,9 @@
             </div>
 
 
-            <div class="recipe-grid">
-
-
-                <article class="recipe-card">
-
-                    <a
-                            href="berry-breakfast-bowl.html"
-                            class="recipe-image">
-
-                        <img
-                                src="https://images.unsplash.com/photo-1490474418585-ba9bad8fd0ea?auto=format&fit=crop&w=900&q=85"
-                                alt="Berry Breakfast Bowl">
-
-                    </a>
-
-
-                    <div class="recipe-content">
-
-                    <span class="recipe-category">
-                        BREAKFAST
-                    </span>
-
-                        <h3>
-
-                            <a href="berry-breakfast-bowl.html">
-                                Berry Breakfast Bowl
-                            </a>
-
-                        </h3>
-
-                        <p>
-                            A fresh and colorful breakfast bowl
-                            made with berries and creamy yogurt.
-                        </p>
-
-                        <span class="recipe-meta">
-                        10 min · Easy
-                    </span>
-
-                    </div>
-
-                </article>
-
-
+            <div
+                    class="recipe-grid"
+                    id="breakfastRecipes">
             </div>
 
         </div>
@@ -411,12 +370,13 @@
     </section>
     <!-- ================= DINNER ================= -->
 
+    <!-- ================= DINNER ================= -->
+
     <section
             class="section"
             id="dinner">
 
         <div class="container">
-
 
             <div class="section-heading">
 
@@ -432,125 +392,25 @@
 
                 </div>
 
-                <a href="recipes.html?category=DINNER" class="view-all">
+                <a
+                        href="recipes.html?category=DINNER"
+                        class="view-all">
+
                     All Dinner Recipes →
+
                 </a>
 
             </div>
 
 
-
-            <div class="recipe-grid">
-
-
-                <article class="recipe-card">
-
-                    <a href="recipe.html">
-
-                        <img
-                                src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=900&q=85"
-                                alt="Cozy vegetable soup">
-
-                    </a>
-
-                    <div class="recipe-content">
-
-                    <span class="recipe-category">
-                        SOUP
-                    </span>
-
-                        <h3>
-                            <a href="recipe.html">
-                                Cozy Vegetable Soup
-                            </a>
-                        </h3>
-
-                        <p>
-                            A warm and comforting bowl packed
-                            with colorful vegetables.
-                        </p>
-
-                    </div>
-
-                </article>
-
-
-
-                <article class="recipe-card">
-
-                    <a
-                            href="recipe.html"
-                            class="recipe-image">
-
-                        <img
-                                src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=900&q=85"
-                                alt="Homemade garden pizza">
-
-                    </a>
-
-                    <div class="recipe-content">
-
-                    <span class="recipe-category">
-                        PIZZA
-                    </span>
-
-                        <h3>
-                            <a href="recipe.html">
-                                Homemade Garden Pizza
-                            </a>
-                        </h3>
-
-                        <p>
-                            Crispy homemade pizza topped with
-                            fresh vegetables and herbs.
-                        </p>
-
-                    </div>
-
-                </article>
-
-
-
-                <article class="recipe-card">
-
-                    <a
-                            href="recipe.html"
-                            class="recipe-image">
-
-                        <img
-                                src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=900&q=85"
-                                alt="Healthy dinner bowl">
-
-                    </a>
-
-                    <div class="recipe-content">
-
-                    <span class="recipe-category">
-                        HEALTHY
-                    </span>
-
-                        <h3>
-                            <a href="recipe.html">
-                                Colorful Dinner Bowl
-                            </a>
-                        </h3>
-
-                        <p>
-                            A balanced bowl filled with fresh
-                            ingredients and delicious flavors.
-                        </p>
-
-                    </div>
-
-                </article>
-
-
+            <div
+                    class="recipe-grid"
+                    id="dinnerRecipes">
             </div>
 
         </div>
 
     </section>
-
     <!-- ================= ADVERTISEMENT 3 ================= -->
 
     <section class="ad-section">
@@ -865,6 +725,102 @@
 
     });
 </script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
 
+        function displayRecipes(containerId, category) {
+
+            const container =
+                document.getElementById(containerId);
+
+            if (!container) return;
+
+
+            const filteredRecipes = recipes.filter(function (recipe) {
+
+                return recipe.category.toUpperCase() === category;
+
+            });
+
+
+            container.innerHTML =
+                filteredRecipes.map(function (recipe) {
+
+                    return `
+
+                <article class="recipe-card">
+
+                    <a
+                        href="${recipe.url}"
+                        class="recipe-image"
+                    >
+
+                        <img
+                            src="${recipe.image}"
+                            alt="${recipe.title}"
+                            loading="lazy"
+                        >
+
+                    </a>
+
+
+                    <div class="recipe-content">
+
+                        <span class="recipe-category">
+                            ${recipe.category}
+                        </span>
+
+
+                        <h3>
+
+                            <a href="${recipe.url}">
+                                ${recipe.title}
+                            </a>
+
+                        </h3>
+
+
+                        <p>
+                            ${recipe.description || ""}
+                        </p>
+
+
+                        <span class="recipe-meta">
+                            ${recipe.time || ""} · ${recipe.difficulty || ""}
+                        </span>
+
+                    </div>
+
+                </article>
+
+                `;
+
+                }).join("");
+
+        }
+
+
+        // Breakfast
+        displayRecipes(
+            "breakfastRecipes",
+            "BREAKFAST"
+        );
+
+
+        // Dinner
+        displayRecipes(
+            "dinnerRecipes",
+            "DINNER"
+        );
+
+
+        // Dessert
+        displayRecipes(
+            "dessertRecipes",
+            "DESSERT"
+        );
+
+    });
+</script>
 </body>
 </html>
