@@ -9,6 +9,7 @@ const recipes = [
         difficulty: "Easy",
         url: "Creamy_Pumpkin_Soup.html"
     },
+
     {
         title: "Garlic Herb Roasted Pumpkin",
         category: "DINNER",
@@ -18,10 +19,14 @@ const recipes = [
         difficulty: "Easy",
         url: "Garlic_Herb_Roasted_Pumpkin.html"
     },
+
     {
         title: "Pumpkin Pancakes",
         category: "BREAKFAST",
+        description: "Fluffy pumpkin pancakes flavored with cinnamon, nutmeg, ginger, and warm fall spices.",
         image: "images/Pumpkin_Pancakes.png",
+        time: "25 min",
+        difficulty: "Easy",
         url: "Pumpkin_Pancakes.html"
     },
 
@@ -33,32 +38,12 @@ const recipes = [
         time: "50 min",
         difficulty: "Easy",
         url: "Classic_Apple_Crumble.html"
-    },
+    }
+
 ];
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// ================= RANDOM RECIPES =================
 
 function shuffleArray(array) {
 
@@ -76,6 +61,8 @@ function shuffleArray(array) {
 }
 
 
+// ================= RECOMMENDED RECIPES =================
+
 function showRecommendedRecipes() {
 
     const container =
@@ -83,28 +70,19 @@ function showRecommendedRecipes() {
 
     if (!container) return;
 
-
-    // Get current page
     const currentPage =
         window.location.pathname.split("/").pop();
 
-
-    // Remove current recipe
     const availableRecipes =
         recipes.filter(recipe =>
             recipe.url !== currentPage
         );
 
-
-    // Randomize recipes
     const randomRecipes =
         shuffleArray(availableRecipes);
 
-
-    // Show only 2
     const selectedRecipes =
         randomRecipes.slice(0, 2);
-
 
     container.innerHTML =
         selectedRecipes.map(recipe => `
@@ -130,53 +108,3 @@ function showRecommendedRecipes() {
 
 
 showRecommendedRecipes();
-
-const dessertContainer =
-    document.getElementById("dessertRecipes");
-
-if (dessertContainer) {
-
-    const dessertRecipes = recipes.filter(
-        recipe => recipe.category.toUpperCase() === "DESSERT"
-    );
-
-    dessertContainer.innerHTML = dessertRecipes.map(recipe => `
-
-        <article class="recipe-card">
-
-            <a href="${recipe.url}">
-                <img
-                    src="${recipe.image}"
-                    alt="${recipe.title}"
-                    loading="lazy"
-                >
-            </a>
-
-            <div class="recipe-card-content">
-
-                <span class="recipe-category">
-                    ${recipe.category}
-                </span>
-
-                <h3>
-                    <a href="${recipe.url}">
-                        ${recipe.title}
-                    </a>
-                </h3>
-
-                <p>
-                    ${recipe.description}
-                </p>
-
-                <div class="recipe-card-meta">
-                    <span>${recipe.time}</span>
-                    <span>${recipe.difficulty}</span>
-                </div>
-
-            </div>
-
-        </article>
-
-    `).join("");
-
-}

@@ -749,6 +749,72 @@
 
 <script src="js/script.js"></script>
 <script src="recipes.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+        const dessertContainer =
+            document.getElementById("dessertRecipes");
+
+        if (!dessertContainer) return;
+
+        const dessertRecipes = recipes.filter(function(recipe) {
+
+            return recipe.category.toUpperCase() === "DESSERT";
+
+        });
+
+        dessertContainer.innerHTML =
+            dessertRecipes.map(function(recipe) {
+
+                return `
+
+                <article class="recipe-card">
+
+                    <a
+                        href="${recipe.url}"
+                        class="recipe-image"
+                    >
+
+                        <img
+                            src="${recipe.image}"
+                            alt="${recipe.title}"
+                            loading="lazy"
+                        >
+
+                    </a>
+
+                    <div class="recipe-content">
+
+                        <span class="recipe-category">
+                            ${recipe.category}
+                        </span>
+
+                        <h3>
+
+                            <a href="${recipe.url}">
+                                ${recipe.title}
+                            </a>
+
+                        </h3>
+
+                        <p>
+                            ${recipe.description}
+                        </p>
+
+                        <span class="recipe-meta">
+                            ${recipe.time} · ${recipe.difficulty}
+                        </span>
+
+                    </div>
+
+                </article>
+
+            `;
+
+            }).join("");
+
+    });
+</script>
 
 <script>
     document.addEventListener("DOMContentLoaded", function () {
